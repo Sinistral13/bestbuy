@@ -20,7 +20,7 @@ def print_all_products(my_store):
     for i, product in enumerate(products_to_print, start=1):
         print(f"{i}.", end=" ")
         product.show()
-    
+
 
 def get_total_quantity(my_store):
     """Print the combined quantity of all active products."""
@@ -106,7 +106,7 @@ def main():
     menu = start(best_buy)
     print_commands()
     get_command(menu)
-    
-    
+
+
 if __name__ == "__main__":
         main()

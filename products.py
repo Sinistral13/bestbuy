@@ -1,6 +1,25 @@
 class Product:
-    def __init__(self, name, price, quantity):
+    """
+    Represents a product in a store inventory.
 
+    A Product has a name, price, and quantity in stock.
+    It can be purchased, which adds to its quantity.
+    A product can also be active or inactive depending on stock level.
+    """
+
+
+    def __init__(self, name, price, quantity):
+        """
+        Initializes a new Product instance.
+
+        Args:
+            name (str): The name of the product.
+            price (float): The price of a single unit.
+            quantity (int): The initial stock quantity.
+
+        Raises:
+            Exception: If name is empty, or price/quantity is negative.
+        """
         if not name:
             raise Exception("Invalid product name")
         if price < 0:
@@ -62,7 +81,7 @@ class Product:
         self.set_quantity(quantity)
 
         return total_price
-    
+
 def main():
     bose = Product("Bose QuietComfort Earbuds", price=250, quantity=500)
     mac = Product("MacBook Air M2", price=1450, quantity=100)
