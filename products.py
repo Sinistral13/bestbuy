@@ -71,13 +71,18 @@ class Product:
         Buys a given quantity of the product.
         Returns the total price (float) of the purchase.
         Updates the quantity of the product.
+        If ordered quantity is higher then stock,
+        product is skipped.
         """
         if quantity <= 0:
             raise Exception("Quantity must be positive")
 
         total_price = self.price * quantity
-        quantity += self.get_quantity()
-
+        quantity = self.get_quantity() - quantity
+        if quantity < 0:
+            print(f"Not enough {self.name} in stock."
+                  " Order is skipped.")
+            return 0
         self.set_quantity(quantity)
 
         return total_price

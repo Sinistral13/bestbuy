@@ -98,7 +98,7 @@ def main():
     availible_products = best_buy.get_all_products()
     print(best_buy.get_total_quantity())
     test = products.Product("Test", 400, 100)
-    print(best_buy.order([(availible_products[0], 1), (availible_products[1], 2), (test, 6)]))
+    print(best_buy.order([(availible_products[0], 200), (availible_products[1], 2), (test, 6)]))
 
 
 if __name__ == "__main__":
