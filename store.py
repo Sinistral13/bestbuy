@@ -50,13 +50,13 @@ class Store:
 
 
     def get_all_products(self):
-        """Return all products in the store that are active."""
+        """Return the list of all active products in the store."""
         products = self.get_products()
         active_products = []
         for product in products:
             if product.is_active():
                 active_products.append(product)
-        return active_products    
+        return active_products 
 
 
     def order(self, shopping_list):
